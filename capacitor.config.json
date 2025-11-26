@@ -1,0 +1,14 @@
+{
+  "appId": "www.kuppel.co",
+  "appName": "Kuppel POS",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "linuxAndroidStudioPath": "/home/dogia/Descargas/android-studio/bin/studio.sh"
+}
