@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Seleccionar Caja</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="content">
+    <div class="ion-text-center">
+      <i>Seleccione la caja a la que quiere acceder</i><br>
+
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col class="caja" *ngFor="let caja of Cajas; let i = index">
+            <div style="width: 100%; height: 100%;" (click)="dismiss(caja._id)">
+              <ion-icon name="briefcase" style="width: 128px; height: 128px;"></ion-icon><br>
+              {{caja.nombre + ' - ' + caja.codigo}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

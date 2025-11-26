@@ -1,0 +1,234 @@
+<!-- http://localhost:8100/imprimir?factura=%7B%22prefijo%22:%22FV%22,%22consecutivo%22:55,%22fecha%22:1612187236,%22tercero%22:%7B%22_id%22:%22601330ce6e55000066007d66%22,%22nombre%22:%22Maria%20Jos%C3%A9%20Tob%C3%B3n%22,%22identificacion%22:%221094889642%22%7D,%22cajero%22:%7B%22_id%22:%225bca146e7407496e9340d4d3%22,%22identificacion%22:null%7D,%22caja%22:%7B%22_id%22:%225ad693badd389d511a50b2d4%22,%22nombre%22:%22CAJA%20BOUTIQUE%22,%22codigo%22:%221%22,%22bloqueo_cierre%22:true,%22saldo%22:829200,%22facturacion%22:%7B%22prefijo%22:%22FV%22,%22consecutivo_inicial%22:1,%22consecutivo_final%22:10000,%22resolucion%22:%22JDFHDJFH%22,%22fecha_vencimiento%22:1523941200%7D,%22impresion_pos%22:%7B%22frase_final%22:%22Resoluci%C3%B3n%20N%C2%B0%201%20de%201999%22,%22tipo_impresora%22:%22carta%22%7D%7D,%22vendedor%22:%7B%22_id%22:%225bca146e7407496e9340d4d3%22%7D,%22sub_total%22:269340,%22total_descuentos%22:0,%22total_impuestos%22:51364,%22total%22:332520,%22clase%22:%22facturacion_normal%22,%22observaciones%22:null,%22nombre_temporal%22:%22%22,%22EsFacturaElectronica%22:false,%22estado%22:%22pagado%22,%22conversion_rate%22:1,%22currency%22:%22COP%22,%22_id%22:%2260180663bf58000087000f72%22%7D&items=%5B%7B%22item%22:%7B%22_id%22:%225ed9697d24b28b2f89367df6%22,%22nombre%22:%22Vestido%20Largo%20Juvenil%20Manga%20Corta%22,%22descripcion%22:null,%22tipo%22:%22Producto%22,%22stock%22:7%7D,%22info_descuento%22:%7B%22aplicar_descuento%22:false,%22tipo_descuento%22:%22porcentaje%22,%22descuento%22:0%7D,%22impuesto%22:%7B%22_id%22:%225aeb85c6dd389d37411f6244%22,%22nombre%22:%22IVA%20VENTAS%2019%25%22,%22porcentaje%22:19,%22tipo_impuesto%22:%22iva%22%7D,%22cantidad%22:1,%22valor_unitario%22:79748,%22valor_neto%22:0,%22valor_descuento%22:0,%22valor_impuesto%22:0,%22total%22:0,%22factura_id%22:%2260180663bf58000087000f72%22%7D,%7B%22item%22:%7B%22_id%22:%225ed9697d24b28b2f3929a977%22,%22nombre%22:%22Vestido%20Largo%20Juvenil%20Manga%20Corta%22,%22descripcion%22:null,%22tipo%22:%22Producto%22,%22stock%22:-1%7D,%22info_descuento%22:%7B%22aplicar_descuento%22:false,%22tipo_descuento%22:%22porcentaje%22,%22descuento%22:0%7D,%22impuesto%22:%7B%22_id%22:%225aeb85c6dd389d37411f6244%22,%22nombre%22:%22IVA%20VENTAS%2019%25%22,%22porcentaje%22:19,%22tipo_impuesto%22:%22iva%22%7D,%22cantidad%22:1,%22valor_unitario%22:79748,%22valor_neto%22:0,%22valor_descuento%22:0,%22valor_impuesto%22:0,%22total%22:0,%22factura_id%22:%2260180663bf58000087000f72%22%7D,%7B%22item%22:%7B%22_id%22:%225ed9697d24b28b319e3fe556%22,%22nombre%22:%22Vestido%20Largo%20Juvenil%20Manga%20Corta%22,%22descripcion%22:null,%22tipo%22:%22Producto%22,%22stock%22:-1%7D,%22info_descuento%22:%7B%22aplicar_descuento%22:false,%22tipo_descuento%22:%22porcentaje%22,%22descuento%22:0%7D,%22impuesto%22:%7B%22_id%22:%225aeb85c6dd389d37411f6244%22,%22nombre%22:%22IVA%20VENTAS%2019%25%22,%22porcentaje%22:19,%22tipo_impuesto%22:%22iva%22%7D,%22cantidad%22:1,%22valor_unitario%22:79748,%22valor_neto%22:0,%22valor_descuento%22:0,%22valor_impuesto%22:0,%22total%22:0,%22factura_id%22:%2260180663bf58000087000f72%22%7D,%7B%22item%22:%7B%22_id%22:%225ed9709f24b28b343e0f4971%22,%22nombre%22:%22Falda%20Semi%20Rotonda%20Corta%20Formal%20Juvenil%20Moda%20Casual%20Mujer%22,%22descripcion%22:null,%22tipo%22:%22Producto%22,%22stock%22:-6%7D,%22info_descuento%22:%7B%22aplicar_descuento%22:false,%22tipo_descuento%22:%22porcentaje%22,%22descuento%22:0%7D,%22impuesto%22:%7B%22_id%22:%225aeb85c6dd389d37411f6244%22,%22nombre%22:%22IVA%20VENTAS%2019%25%22,%22porcentaje%22:19,%22tipo_impuesto%22:%22iva%22%7D,%22cantidad%22:3,%22valor_unitario%22:31092,%22valor_neto%22:0,%22valor_descuento%22:0,%22valor_impuesto%22:0,%22total%22:0,%22factura_id%22:%2260180663bf58000087000f72%22%7D%5D -->
+<ion-header class="no-print">
+  <ion-toolbar>
+    <ion-title>imprimir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="cleanHeader factura" [ngClass]="{'carta': true, 'pos-80mm': false, 'pos-60mm': false}">
+  <div class="row" style="width: 0 !important;">&nbsp;</div>
+
+  <!-- Tamaño Carta -->
+  <ion-grid *ngIf="true" class="margen-carta">
+    <!-- HEADER -->
+    <ion-row>
+      <ion-col size="4">
+        <div class="row">
+          <div class="col-12">
+            <b>{{configuracion.sede.nombre || ''}} - {{configuracion.sede.nit_rut || ''}}</b>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <i>{{configuracion.sede.direccion || ''}} - {{configuracion.sede.telefono || ''}}</i>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <b>Vendedor:</b>&nbsp;<i>{{factura.vendedor.nombre || ''}}</i>
+          </div>
+        </div>
+      </ion-col>
+
+      <ion-col size="4" class="text-center">
+        LOGO
+      </ion-col>
+
+      <ion-col size="4" class="text-right">
+        <div class="row">
+          <div class="col-12">
+            <b>Factura No:</b>&nbsp;<i style="color:#1ab394">{{factura.prefijo || ''}}-{{factura.consecutivo || ''}}</i><br>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <b>Fecha:</b>&nbsp;<i>{{((factura.fecha || 0)*1000) | date: 'd-MMM-yy hh:mm a'}}</i><br>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <b>Cliente:</b>&nbsp;<i>{{factura.tercero.nombre || ''}}</i><br>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Tabla de items -->
+    <div class="tabla-items" class="margen-carta">
+      <ion-row>
+        <ion-col size="4"><b>Item</b></ion-col>
+        <ion-col size="2"><b>Cant</b></ion-col>
+        <ion-col size="3"><b>Valor/Unidad</b></ion-col>
+        <ion-col size="3"><b>Total</b></ion-col>
+      </ion-row>
+
+      <small *ngFor="let item of items;">
+        <ion-row>
+          <ion-col size="4"><i>{{item.item.nombre }}</i></ion-col>
+          <ion-col size="2"><i>{{item.cantidad}}</i></ion-col>
+          <ion-col size="3"><i>{{item.valor_unitario | currency}}</i></ion-col>
+          <ion-col size="3"><i>{{(item.valor_unitario * item.cantidad) | currency}}</i></ion-col>
+        </ion-row>
+        <hr>
+      </small> 
+    </div>
+
+    <!-- Medio de pago y resumen -->
+    <ion-row>
+      <ion-col size="6">
+        Medio de pago
+      </ion-col>
+      <ion-col size="6">
+        <ion-row class="border-bottom">
+          <ion-col><b>Subtotal:</b></ion-col>
+          <ion-col><i>{{factura.sub_total | currency}}</i></ion-col>
+        </ion-row>
+        <ion-row class="border-bottom">
+          <ion-col><b>Descuentos:</b></ion-col>
+          <ion-col><i>{{factura.total_descuentos | currency}}</i></ion-col>
+        </ion-row>
+        <ion-row class="border-bottom">
+          <ion-col><b>Impuestos:</b></ion-col>
+          <ion-col><i>{{factura.total_impuestos | currency}}</i></ion-col>
+        </ion-row>
+        <ion-row class="border-bottom">
+          <ion-col><b>Total:</b></ion-col>
+          <ion-col><i>{{factura.total | currency}}</i></ion-col>
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
+    
+    <!-- Mensaje final-->
+    <div class="row text-center">
+      <div class="col-12">
+        <small>
+          {{factura.caja.facturacion.resolucion || ''}} - {{(factura.caja.impresion_pos.frase_final || '')}}
+        </small>
+      </div>
+    </div>
+      <!--
+      <ion-col size="12">
+        <table>
+          <thead>
+            <th>Item</th>
+            <th>Cantidad</th>
+            <th>Valor Unitario</th>
+            <th>Valor</th>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of items;">
+              <td>{{item.item.nombre}}</td>
+              <td>{{item.cantidad}}</td>
+              <td>{{item.valor_unitario | currency}}</td>
+              <td>{{(item.valor_unitario * item.cantidad) | currency}}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </ion-col>
+    </ion-row> 
+    -->
+  </ion-grid>
+
+  <!-- Tamaño 80mm -->
+  <ion-grid *ngIf="false" class="margen-pos80mm">
+    <ion-row>
+      <ion-col size="12" class="text-center">{{(factura.fecha*1000) | date: 'short'}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="text-center">LOGO</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="text-center"><b>{{configuracion.sede.nombre || ''}}</b></ion-col>
+      <ion-col size="12" class="text-center">{{configuracion.sede.nit_rut}}</ion-col>
+      <ion-col size="12" class="text-center">{{configuracion.sede.direccion}}</ion-col>
+      <ion-col size="12" class="text-center">{{configuracion.sede.telefono}}</ion-col>
+      <ion-col size="12" class="text-center">
+        <b>Vendedor:</b>&nbsp;<i>{{factura.vendedor.nombre || ''}}</i>
+      </ion-col>
+    </ion-row>
+
+    <!-- Fila de los productos-->
+    <ion-row>
+      <ion-col size="12">
+        <!-- Encabezado de la tabla -->
+        <ion-row>
+          <ion-col><b>Item</b></ion-col>
+          <ion-col><b>Cant</b></ion-col>
+          <ion-col><b>Vlr/Un</b></ion-col>
+          <ion-col><b>Total</b></ion-col>
+        </ion-row>
+
+        <small *ngFor="let item of items;">
+          <ion-row class="no-wrap text-center">
+            <ion-col size="4"><i>{{item.item.nombre || ''}} <br> Ref: {{item.item.referencia}}</i></ion-col>
+            <ion-col size="2"><i>{{item.cantidad}}</i></ion-col>
+            <ion-col size="3"><i>{{item.valor_unitario | currency}}</i></ion-col>
+            <ion-col size="3"><i>{{(item.valor_unitario * item.cantidad) | currency}}</i></ion-col>
+          </ion-row>
+          <hr>
+        </small> 
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Tamaño 60mm -->
+  <ion-grid *ngIf="false">
+    <ion-row>
+      <ion-col size="12" class="text-center">{{(factura.fecha*1000) | date: 'short'}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="text-center">LOGO</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="text-center"><b>{{configuracion.sede.nombre || ''}}</b></ion-col>
+      <ion-col size="12" class="text-center">{{configuracion.sede.nit_rut}}</ion-col>
+      <ion-col size="12" class="text-center">{{configuracion.sede.direccion}}</ion-col>
+      <ion-col size="12" class="text-center">{{configuracion.sede.telefono}}</ion-col>
+      <ion-col size="12" class="text-center">
+        <b>Vendedor:</b>&nbsp;<i>{{factura.vendedor.nombre || ''}}</i>
+      </ion-col>
+    </ion-row>
+
+    <!-- Fila de los productos-->
+    <ion-row>
+      <ion-col size="12">
+        <!-- Encabezado de la tabla -->
+        <ion-row>
+          <ion-col><b>Item</b></ion-col>
+          <ion-col><b>Cant</b></ion-col>
+          <ion-col><b>Vlr/Un</b></ion-col>
+          <ion-col><b>Total</b></ion-col>
+        </ion-row>
+
+        <small *ngFor="let item of items;">
+          <ion-row class="no-wrap text-center">
+            <ion-col size="4"><i>{{item.item.nombre}} <br> Ref: {{item.item.referencia}}</i></ion-col>
+            <ion-col size="2"><i>{{item.cantidad}}</i></ion-col>
+            <ion-col size="3"><i>{{item.valor_unitario | currency}}</i></ion-col>
+            <ion-col size="3"><i>{{(item.valor_unitario * item.cantidad) | currency}}</i></ion-col>
+          </ion-row>
+          <hr>
+        </small> 
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="row no-print">
+    <button class="btn btn-success margin-auto" (click)="print()">Imprimir</button>
+  </div>
+</ion-content>

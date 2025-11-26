@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clientes</ion-title>
+    <ion-title size="small">Seleccione el cliente al que le quiere asignar la facturación.</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="modal-body">
+    <ion-row class="pointer m-align" *ngFor="let cliente of clientes; index as i" [id]="cliente._id" (click)="selectClient(cliente._id)">
+      <ion-col size="2">
+        {{ cliente.nombre || '-' }}
+      </ion-col>
+      <ion-col size="3">
+        {{ cliente.apellido || '-' }}
+      </ion-col>
+      <ion-col size="4">
+        {{ cliente.correo || '-' }}
+      </ion-col>
+      <ion-col size="3">
+        {{ cliente.identificacion || '-' }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid class="botones">
+    <ion-row class="text-center m-align row-botones">
+      <ion-col>
+        <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+      </ion-col>
+
+      <ion-col>
+        <button class="btn btn-success" (click)="aceptar()">Seleccionar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

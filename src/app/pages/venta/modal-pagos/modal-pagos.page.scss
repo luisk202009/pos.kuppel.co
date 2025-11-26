@@ -1,0 +1,90 @@
+.m-align{
+    display: flex;
+    align-items: center;
+}
+
+.botonesPago div{
+    width: 100%;
+    //padding: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1367px){
+    .botonesPago div{
+        font-size: x-small;
+    }
+}
+
+.botonesPago{
+    padding: 1em;
+}
+
+.botonesPago ion-icon{
+    font-size: 2em;
+}
+
+#botonOK{
+    background: #87be57;
+    box-shadow: 0 0 1px #2d2d2d;
+    color: #f0f0f0;
+    border-radius: 1em;
+}
+
+#botonCancel{
+    background: #be5757;
+    box-shadow: 0 0 1px #2d2d2d;
+    color: #f0f0f0;
+    border-radius: 1em;
+}
+
+/*.titlepagos{
+    color: #CDCDCD;
+}
+
+.totalfactura{
+    color: black;
+    text-align: center;
+    font-size: 1.7em;
+}
+
+.columTotal hr{
+    width: 15%;
+    background-color: black;
+    margin-top: 0px;
+}
+
+.colFormasPagos{
+    text-align: center;
+}
+
+.colPagos{
+    text-align: center;
+}
+
+.colCambio{
+    text-align: center;
+}
+
+.campoPagos{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.colBotones{
+    padding: 60px 0px 0px 0px;
+    text-align: center;
+}
+
+button{
+    background-color: green;
+    width: 40%;
+    height: 70px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.colCalculadora{
+    padding: 40px 0px 0px 0px;
+}*/

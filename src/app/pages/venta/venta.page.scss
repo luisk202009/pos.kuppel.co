@@ -1,0 +1,105 @@
+@import 'css.gg.css';
+
+.clean-logo{
+    padding: 15px 20px;
+}
+
+.tools-right{
+    background: #2b2839;
+    padding: 0;
+}
+
+.content-clasificaciones{
+    margin: auto;
+    width: 90%;
+    padding-bottom: 2em;
+}
+
+.atributo{
+    background-color: rgba(145, 255, 0, 0.74);
+    border-radius: 1em;
+    font-size: xx-small;
+    margin: 5px;
+    color: #fff;
+}
+
+.clasificaciones-table{
+    background: linear-gradient(135deg, rgba(3, 171, 213, 1) 0%, rgba(138, 190, 83, 1) 100%);
+    padding: 2em auto;
+}
+
+.m-align{
+    display: flex;
+    align-items: center;
+}
+
+.gg{
+    zoom: 4;
+    margin: auto;
+}
+
+.item-clasificacion{
+    //background: cornsilk;
+    padding: 15px;
+}
+
+.contenedor-item{
+    background: #f0f0f0;
+    box-shadow: 0 0 2px #2d2d2d;
+    border-radius: 5% 5% 0 0;
+}
+
+.contenedor-item:active{
+    background: chocolate;
+    box-shadow: 0 0 2px #2d2d2d;
+}
+
+.pagination ::ng-deep .ngx-pagination .current {
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+    
+  }
+  .pagination ::ng-deep .ngx-pagination li {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    
+  }
+
+.arrow{
+    background: #4f88ff;
+    box-shadow: 0 0 3px #2d2d2d;
+    border-radius: 5%;
+    height: 28vh;
+}
+
+.atributos{
+    white-space: nowrap !important;
+    width: fit-content !important;
+    padding: 1em;
+}
+
+.price-row{
+    background: #2d2d2d;
+    color: #f0f0f0;
+    @media only screen and (min-width: 1359px) {
+        font-size: 1.5rem !important;
+    }
+}
+
+.arrow ion-icon{
+    font-size: large;
+    margin: auto;
+}
+
+@media only screen and (max-width: 1367px){
+    .disapear{
+        display: none;
+    }
+}
+
+.content-center {
+    margin: auto;
+    width: 90%;
+}

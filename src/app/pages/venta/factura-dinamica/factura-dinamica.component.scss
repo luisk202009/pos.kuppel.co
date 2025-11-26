@@ -1,0 +1,26 @@
+.items-dinamicos{
+    height: calc(33vh - 3.5em);
+}
+
+.scroll-x{
+    overflow-x: scroll;
+}
+
+.m-align{
+    display: flex;
+    align-items: center;
+}
+
+.factura-dinamica{
+    padding: 5px;
+    background: #ffffff;
+}
+
+.tiny-text{
+    font-size: x-small;
+    color: #888888;
+}
+
+.itemRow{
+    border-bottom: black 1px dashed;
+}

@@ -1,0 +1,15 @@
+.clientes{
+    height: 85%;
+    overflow-y: scroll;
+}
+
+.botones{
+    height: 15%;
+    border-top: 1px outset;
+}
+
+.row-botones{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true" class="cleanHeader">
+  <div class="row fullHeight">
+    <div class="col-3 plantas fullHeight">
+      <app-plantas [mesasRef]="mesas"></app-plantas>
+    </div>
+    <div class="col-9 mesas fullHeight">
+      <app-mesas #mesas></app-mesas>
+    </div>
+  </div>
+</ion-content>
+
+
+<!--
+<ion-content [fullscreen]="true">
+    <div class="row">
+      <div class="col-sm-4 divplantas">
+        <app-plantas></app-plantas>
+      </div>
+      <div class="col-sm-8">
+        <app-mesas></app-mesas>
+      </div>
+    </div>
+</ion-content>
+-->

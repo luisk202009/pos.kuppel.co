@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de facturas guardadas</ion-title>
+    <ion-title size="small">Seleccione la factura que desea traer a edición</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="modal-body">
+    <ion-row class="pointer m-align">
+      <ion-col size="2">
+        <strong>Factura</strong>
+      </ion-col>
+
+      <ion-col size="3">
+        <strong>Tercero</strong>
+      </ion-col>
+
+      <ion-col size="2">
+        <strong>Items</strong>
+      </ion-col>
+
+      <ion-col size="2">
+        <strong>Valor</strong>
+      </ion-col>
+
+      <ion-col size="3">
+        <strong>Acciones</strong>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="pointer m-align" *ngFor="let facturaEnEspera of facturasEnEspera; index as i"
+      [id]="facturaEnEspera._id">
+      <ion-col size="2">
+        <small>{{facturaEnEspera.nombre_temporal || '-'}} ({{facturaEnEspera.prefijo}})</small>
+      </ion-col>
+
+      <ion-col size="3">
+        <small>{{facturaEnEspera.tercero.nombre || '-'}}</small>
+      </ion-col>
+
+      <ion-col size="2">
+        <small>{{facturaEnEspera.items.length || 0}}</small>
+      </ion-col>
+      
+      <ion-col size="2">
+        <small>{{facturaEnEspera.total | currency}}</small>
+      </ion-col>
+
+      <ion-col size="3">
+        <strong><ion-icon class="btn btn-danger" name="trash-outline" (click)="eliminar(facturaEnEspera._id)"></ion-icon></strong>
+        &nbsp;
+        <strong><ion-icon class="btn btn-success" name="cloud-download-outline" (click)="cargar(facturaEnEspera._id)" ></ion-icon></strong>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-grid class="botones">
+    <ion-row class="text-center m-align row-botones">
+      <ion-col>
+        <button class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

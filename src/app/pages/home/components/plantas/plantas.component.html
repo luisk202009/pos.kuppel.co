@@ -1,0 +1,16 @@
+<div class="cleanHeaderContent">
+  <div class="row text-center">
+    <div class="col-12">
+      <h4>Plantas</h4>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-12 plantas-lista">
+      <div class="row" *ngFor="let planta of plantas; let i = index">
+        <div class="col-12">
+          <div class="btnpisos" (click)="setCurrent(i)" id="{{ 'planta-' + i }}">{{planta.nombre}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

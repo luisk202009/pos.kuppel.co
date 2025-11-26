@@ -1,0 +1,69 @@
+<ion-content>
+  <form autocomplete="off" class="center-vertical-items">
+    <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col class="ma" size-sm="10" size-md="6" size-lg="4">
+              <ion-row>
+                <ion-col size="12" class="text-center" class="margin-phi-rest-bottom-3 text-center">
+                  <img src="../../assets/icon/logo.png" alt="" width="62%"/>
+                </ion-col>
+              </ion-row>
+              
+              <ion-row class="text-center">
+                <ion-col size="12" class="margin-phi-rest-bottom-5">
+                  <ion-label>Cuenta</ion-label>
+                  <ion-input type="text" [value]="username" (change)="setUsername($event.target.value)" placeholder="correo@mail.com" class="border-sb"></ion-input>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="text-center">
+                <ion-col size="12" class="margin-phi-rest-bottom-5">
+                  <ion-label>Contraseña</ion-label>
+                  <ion-input type="password" [value]="password" (change)="setPassword($event.target.value)" placeholder="********" class="border-sb"></ion-input>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="text-center">
+                <ion-col size="12" class="margin-phi-rest-bottom-5">
+                  <ion-button color="success" size="large" (click)="login()">Ingresar</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+    <!--<div class="container fh">
+    <ion-col size-sm="10" size-md="8" size-lg="6">
+              <ion-item>
+                <ion-label position="floating">Lb</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+    <div class="row fh">
+      <div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 fh">
+        Testing
+      </div>
+    </div>
+
+  </div>
+
+<div class="center">
+    <form autocomplete="off">
+      <img src="../../assets/icon/logo.png" alt="" width="100%"/><br>
+      <input type="text" [(ngModel)]="username" name="username" id="username" class="form-text-input" placeholder="Ingrese su usuario"><br>
+      <input type="password" [(ngModel)]="password" name="password" id="password" class="form-text-input" placeholder="Ingrese su contraseña"><br>
+      <div class="container50">
+        <ion-button expand="full" color="success"  (click)="login()">Ingresar</ion-button>
+      </div><br>
+
+      <div class="recovery-password">
+        <a href="/recovery-password">¿Olvidaste tu contraseña?</a>
+      </div>
+    </form>
+  </div>-->
+
+<ion-footer>
+  <ion-label class="footer-label">Kuppel 2017 - &copy; Todos los derechos reservados.</ion-label>
+</ion-footer>

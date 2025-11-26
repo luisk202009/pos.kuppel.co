@@ -1,0 +1,88 @@
+<ion-content [fullscreen]="true" class="cleanHeader">
+    <ion-grid class="no-padding">
+        <ion-row class="body-grid">
+            <ion-col size-sm="6" size-md="8" size-lg="8" class="clasificaciones-table m-align">
+                
+                <ion-row class="text-center m-align content-center" style="padding-bottom: 60px;">
+                    <ion-col size="1" (click)="paginaAnterior()" class="arrow text-center m-align">
+                        <ion-icon name="arrow-back"></ion-icon>
+                    </ion-col>
+                    <ion-col size="10">
+                        <ion-row class="text-center" *ngIf="!switchCategoriasProductos">
+                            <ion-col class="item-clasificacion" size="12" size-sm="12" size-md="4"
+                                *ngFor="let categoria of categorias  | paginator:pageSize:pageNumber | paginate: {itemsPerPage:pageSize, currentPage:pageNumber}">
+                                <div class="contenedor-item" (click)="filtrarItemsPorCategoria(categoria._id)">
+                                    <ion-row>
+                                        <ion-col size="12" class="disapear">&nbsp;</ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col size="12">&nbsp;</ion-col>
+                                        <ion-col class="text-center">
+                                            <i class="text-large fa" [class]="categoria.icon || 'fa-asterisk'"></i>
+                                        </ion-col>
+                                        <ion-col size="12">&nbsp;</ion-col>
+                                    </ion-row>
+
+                                    <ion-row class="price-row">
+                                        <ion-col class="text-center">
+                                            {{categoria.nombre}}
+                                        </ion-col>
+                                    </ion-row>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+
+                        <ion-row class="text-center" *ngIf="switchCategoriasProductos" class="m-align">
+                            <ion-col class="item-clasificacion" size="4" size-sm="12" size-md="4"
+                                *ngFor="let producto of rowsFiltered | paginator:pageSize:pageNumber">
+                                <div class="contenedor-item" (click)="agregarProducto(producto._id)">
+                                    <ion-row>
+                                        <ion-col class="text-center">
+                                            {{producto.nombre}}
+                                        </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col size="12">&nbsp;</ion-col>
+                                        <ion-col class="text-center">
+                                            <i class="text-large fa" [class]="producto.icon || 'fa-asterisk'"></i>
+                                        </ion-col>
+                                        <ion-col size="12">&nbsp;</ion-col>
+                                    </ion-row>
+
+                                    <ion-row
+                                        ng-if="producto.producto.es_variante && producto.producto.atributos.length > 0"
+                                        class="tiny-text atributos">
+                                        <ion-col class="text-left atributo"
+                                            *ngFor="let atributo of producto.producto.atributos; let indice = index;">
+                                            {{atributo.atributo.nombre}}: {{atributo.valor.nombre}}
+                                        </ion-col>
+                                    </ion-row>
+
+                                    <ion-row class="price-row">
+                                        <ion-col class="text-center">
+                                            {{producto.precio | currency:'$':'symbol':'0.2-2'}}
+                                        </ion-col>
+                                    </ion-row>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+
+                        <button class="btn btn-primary" (click)="back()" *ngIf="switchCategoriasProductos">
+                            X
+                        </button>
+                    </ion-col>
+                    <ion-col size="1" (click)="paginaSiguiente()" class="arrow text-center m-align">
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+
+            <ion-col size-sm="6" size-md="4" size-lg="4" class="tools-right">
+                <app-factura-dinamica #facturaDinamica [productosFactura]="productosFactura" [total]="precioTotal" [impuesto]="impuestoTotal" [tercero]="tercero" (changeItem)="changeItem($event)" (cleanFactura)="cleanFactura($event)"></app-factura-dinamica>
+                <app-teclado-cobro [facturaDinamica]="facturaDinamica" [output]="OutputTeclado" (itemEncontrado)="itemEncontrado($event)" (openClienteModal)="openClienteModal()" (openFacturasEsperaModal)="openFacturasEsperaModal()" (openPagosModal)="openPagosModal()"></app-teclado-cobro>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

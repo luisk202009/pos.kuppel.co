@@ -1,0 +1,42 @@
+<ion-grid class="factura-dinamica">
+    <ion-row class="scroll-x items-dinamicos">
+        <ion-col size="12">
+            <!-- Inicio de los artículos a repetir-->
+            <ion-row class="itemRow" (click)="selectItem(producto._id)" *ngFor="let producto of productosFactura" [id]="producto._id">
+                <ion-col size="7">
+                    <ion-row>
+                        <ion-col size="12">
+                            {{producto.nombre}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="12" class="tiny-text">
+                            {{producto.cantidad}} {{producto.producto.unidad_medida.nombre}}
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+
+                <ion-col size="5" class="m-align">
+                    <ion-row>
+                        <ion-col size="12">{{producto.precio | currency:'$':'symbol':'0.2-2'}}</ion-col>
+                        <ion-col size="12" style="border-bottom: 1px solid #2d2d2d;">(-) {{producto.descuento | currency:'$':'symbol':'0.2-2'}}</ion-col>
+                        <ion-col size="12">{{(producto.precio-producto.descuento) | currency:'$':'symbol':'0.2-2'}}</ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <!-- Fin de los artículos a repetir-->
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-align">
+        <!--<ion-col size="6" class="text-center">
+            <ion-button class="button-normal" expand="full" (click)="dividirCuenta()">Dividir</ion-button>
+        </ion-col>-->
+
+        <ion-col size="12" class="text-center total">
+            <ion-row>
+                <ion-col size="12">Impuesto: {{impuesto | currency:'$':'symbol':'0.2-2'}}</ion-col>
+                <ion-col size="12">Total: {{total | currency:'$':'symbol':'0.2-2'}}</ion-col>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+</ion-grid>

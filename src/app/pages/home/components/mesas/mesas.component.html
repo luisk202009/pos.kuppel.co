@@ -1,0 +1,78 @@
+<div class="mesas cleanHeaderContent">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="offset-1 col-10 vista-mesas">
+          <div class="row">
+            <div class="offset-1 col-8">
+              <div class="row">
+                <div class="col-3 mesa-vista text-center mesa-padding" *ngFor="let mesa of pisos[planta].mesas; let index = index">
+                  <div class="mesa select-box" (click)="IrAVenta(planta, index, 'mesa')">
+                    <div class="mesa-name">
+                      <b>{{mesa}}</b><br>
+                      <p class="tiny-text">1 Cliente</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row bottom-row">
+                <div class="col-12 mesa-vista text-center barra select-box" *ngFor="let barra of pisos[planta].barras; let index = index" (click)="IrAVenta(planta, index, 'barra')">
+                  {{barra}}
+                </div>
+              </div>
+            </div>
+            <div class="col-2 tools-aside">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-12 mesa-vista text-center" *ngFor="let balcon of pisos[planta].balcones; let index = index">
+                      <div class="balcon select-box" (click)="IrAVenta(planta, index, 'balcon')">
+                        <div class="balcon-name">
+                          <b>{{balcon}}</b><br>
+                          <p class="tiny-text">1 Cliente</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--
+        <div class="col-2 opciones-mesas tools-aside">
+          <div class="row">
+            <div class="col-6">Ocupada</div>
+            <div class="col-6">Disponible</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row" *ngIf="showSettings">
+        <div class="offset-1 col-8 tools-mesas tools-bottom">
+          <div class="row base-tools" style="padding: 1em;">
+            <div class="col-2">
+              Nombre:
+            </div>
+            <div class="col-5">
+              <input type="text" name="nombreMesa" id="nombreMesaIn" placeholder="Ingresa el nombre del puesto">
+            </div>
+            <div class="col-3"><ion-icon name="checkmark-outline"></ion-icon></div>
+            <div class="col-2"><ion-icon name="trash-outline"></ion-icon></div>
+          </div>
+        </div>
+        <div class="col-2 tools-aside tools-bottom">
+          Settings
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row text-right">
+    <div class="col-12 config-col">
+      <ion-icon name="settings-outline" (click)="switchSettings()" style="font-size: 64px;"></ion-icon>
+    </div>
+  </div>
+  -->
+</div>

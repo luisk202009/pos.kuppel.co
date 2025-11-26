@@ -1,0 +1,143 @@
+.select-box{
+    cursor: pointer;
+    user-select: none;
+}
+
+.mesas{
+    min-height: 100%;
+    padding-bottom: 20vh;
+}
+
+.vista-mesas{
+    padding: 1em;
+    //height: 55vh;
+    border: solid 2px #8f8f8f;
+    box-shadow: 0 0 1px black;
+    //overflow: scroll;
+}
+
+.opciones-mesas{
+    position: sticky;
+    margin-top: 10vh;
+    background-color: chartreuse;
+}
+
+.tools-aside{
+    margin-left: 2.075%;
+}
+
+.tools-bottom{
+    margin-top: 2vh;
+}
+
+.tools-mesas{
+    background: darkgreen;
+    text-align: right;
+}
+
+.bottom-row{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.barra{
+    height: 3em;
+    background: #00a9a7;
+    line-height: 3em;
+    border-radius: 0.5em;
+    margin: 0.5em;
+}
+
+.mesa-padding{
+    padding: 3mm
+}
+
+.mesa{
+    background: #00e7c3;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.mesa-name{
+    position: absolute;
+    font-size: large;
+    color: #fff;
+    top: calc(50% - 1em);
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.tiny-text{
+    font-size: small;
+}
+
+.balcon{
+    background: #622063;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 100%;
+    margin-top: 3mm;
+}
+
+.balcon-name{
+    position: absolute;
+    font-size: large;
+    color: #fff;
+    top: calc(50% - 1em);
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.tiny-text{
+    font-size: small;
+}
+
+.config-col{
+    position: fixed;
+    bottom: 0;
+    left: 1cm;
+    float: left;
+    padding: 3.2% 6.4%;
+}
+
+.config-col > ion-icon{
+    cursor: pointer;
+}
+
+#nombreMesaIn{
+    padding: 1em;
+    background: #3d314c;
+    color: #716089;
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+#nombreMesaIn:active{
+    padding: 1em;
+    background: #3d314c;
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+#nombreMesaIn::placeholder{
+    color: #716089;
+}
+
+#nombreMesaIn:focus{
+    outline: none;
+}
+
+.base-tools *{
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.base-tools * *{
+    margin: auto;
+}

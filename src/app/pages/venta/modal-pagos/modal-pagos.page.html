@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pagos</ion-title>
+    <ion-title><small>Terminar el proceso de facturación</small></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <label>Formas de Pago </label><br>
+        <select  class="campoPagos form-control" [(ngModel)]="formaPagoSelec" name="" id="" >
+          <option  *ngFor="let pago of formapago" value="{{pago._id}}">{{pago.nombre}}</option>
+        </select>
+      </ion-col>
+
+      <ion-col size="4">
+        <div *ngIf="getTipoPago() == 'electronico'">
+          <label>Código de transacción</label><br>
+          <input [(ngModel)]="codigoTransaccion" type="text" name="codTransaccion" id="codTransaccion" class="form-control">
+        </div>
+      </ion-col>
+
+      <ion-col size="4" >
+        Total:
+        <input class="form-control" type="text" name="" [value]="(valorTotal | currency)" disabled="disabled">
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="8" offset="2">
+        <label>Pagado</label><br>
+        <input id="inputPagado" disabled="disabled" class="campoPagos form-control" [(ngModel)]="teclado.output"  (ngModelChange)="calcularCambio()"  type="number">
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="colCalculadora" size="8" offset="2">
+        <app-teclado #tecladito [output]="valorpagado" (numero)="numeroEnviado($event)"></app-teclado>
+      </ion-col>
+    </ion-row>
+
+    <ion-col class="colBotones text-center">
+      <ion-row>
+        <ion-col size="6" class="m-align botonesPago" (click)="cancelar()">
+          <div id="botonCancel">
+            <ion-row>
+              <ion-col>
+                <ion-icon name="arrow-undo"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+
+        <ion-col size="6" class="m-align botonesPago" (click)="validar()">
+          <div id="botonOK">
+            <ion-row>
+              <ion-col>
+                <ion-icon name="send"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+
+</ion-content>

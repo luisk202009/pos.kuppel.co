@@ -1,0 +1,36 @@
+.factura{
+    margin-top: 1em;
+    margin: auto;
+}
+
+.border-bottom{
+    border-bottom: 1px solid;
+}
+
+.carta{
+    width: 8.5in !important;
+}
+
+.pos-80mm{
+    width: 80mm;
+}
+
+.pos-60mm{
+    width: 60mm;
+}
+
+.margen-carta{
+    padding: 1cm 2cm;
+}
+
+.margin-auto{
+    margin: auto !important;
+}
+
+.no-wrap{
+    overflow-wrap: normal;
+}
+
+.no-wrap *{
+    overflow-wrap: normal;
+}
