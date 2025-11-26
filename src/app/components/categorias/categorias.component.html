@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>ola</p>
+    </div>
+    <div class="col-sm-7 principal">
+      <div class="row">
+        <div class="col-sm-4" class="hora"> <b> <p>Hora: {{hora}}:{{minutos}} {{ampm}}</p> </b> </div>
+        <div class="col-sm-8 cont">
+          <pagination-controls (pageChange)="pageActual= $event" class="pagination" directionLinks="false"></pagination-controls>
+        </div>
+      </div>
+      <div class="row overflow_x" >
+        <div class="col-sm-5 lista_categoria" *ngFor="let produc of productos"><p>Bebidas energizantes</p></div>
+      </div>
+
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let produc of [].constructor(cantslider)" >
+            <div class="row c_categorias" >
+              <div class="col-sm-4 cont" *ngFor="let produc of productos | paginate: {itemsPerPage: 6, currentPage:pageActual} ">
+                <div class="list_product">
+                  producto {{produc.id}}
+                </div>
+                <div class="precios">
+                  precio
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

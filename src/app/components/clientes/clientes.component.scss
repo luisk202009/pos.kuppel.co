@@ -1,0 +1,63 @@
+.table_clientes{
+    background-color: #14B393;
+    // overflow-y:scroll;
+    height: 55%;
+    padding: 10px 20px 30px 20px;
+}
+.scroll{
+    overflow-y:scroll;
+    height: 90%;
+}
+table{
+    width: 100%;
+}
+.agregarCliente{
+    margin-top: 3%;
+}
+
+.th_nombre{
+    width: 47%;
+    color: white;
+    padding-left: 5px;
+    font-size: 20px;
+}
+.th_id{
+    width: 36.5%;
+    color: white;
+    padding-left: 5px;
+    font-size: 15px;
+}
+.th_telefono{
+    width: 100px;
+    color: white;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+.tb_tr{
+    border-bottom: 3px solid #14B393;
+    height: 34px;
+    background-color: white;
+}
+.td_nombre{
+    color: gray;
+    padding-left: 5px;
+    width: 170px;
+    font-size:15px;
+}
+.td_id{
+    color: gray;
+    padding-left: 5px;
+    width: 130px;
+    font-size:13px;
+}
+.td_telefono{
+    color: gray;
+    width: 100px;
+    font-size:13px;
+
+}
+
+.spacer{
+    padding: 10%;
+}

@@ -1,0 +1,29 @@
+<div class="spacer">
+  <div class="agregarCliente">
+    <app-agregar-cliente></app-agregar-cliente>
+  </div><br>
+  <div class="table_clientes">
+    <tr>
+      <th class="th_nombre" scope="col">Nombre</th>
+      <th class="th_id" scope="col">Identificacion</th>
+      <th class="th_telefono" scope="col">Telefono</th>
+    </tr>
+    <div class="scroll">
+      <table class="">
+
+        <tbody *ngFor="let cliente of clientes; index as i">
+          <tr class="tb_tr">
+            <td class="td_nombre" *ngIf='cliente.nombre!=null && cliente.nombre!="" '><b> {{cliente.nombre}}
+                {{cliente.apellido}}</b></td>
+            <td class="td_nombre" *ngIf='cliente.nombre==null || cliente.nombre=="" '><b> -</b></td>
+            <td class="td_id" *ngIf='cliente.identificacion != null && cliente.identificacion != "" '>ID
+              {{cliente.identificacion}}</td>
+            <td class="td_id" *ngIf='cliente.identificacion==null || cliente.identificacion=="" '>ID -</td>
+            <td class="td_telefono" *ngIf='cliente.telefono!=null && cliente.telefono!="" '>{{cliente.telefono}}</td>
+            <td class="td_id" *ngIf='cliente.telefono==null || cliente.telefono=="" '>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

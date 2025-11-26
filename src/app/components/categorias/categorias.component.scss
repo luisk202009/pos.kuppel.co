@@ -1,0 +1,55 @@
+.list_product{
+    height: 130px;
+    background-color: white;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    text-align: center;
+}
+.principal{
+    background-color: green;
+    height: 482px;
+}
+.cont{
+    padding: 5px;
+    
+}
+.pagination ::ng-deep .ngx-pagination .current {
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+    
+}
+.pagination ::ng-deep .ngx-pagination li {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    
+}
+
+.hora{
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-size: 13px;
+}
+.overflow_x{
+    overflow-x: scroll;
+    flex-wrap: unset;
+    margin-bottom: 10px;
+}
+.lista_categoria{
+    color: white;
+    border-right: 1px solid #CACACA;
+    height: 20px;
+}
+
+.c_categorias{
+    margin-right: 14px;
+    margin-left: 0px;
+    
+}
+.precios{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
