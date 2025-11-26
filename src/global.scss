@@ -1,0 +1,99 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* Fonts for FontsAwesome */
+@import "./assets/css/fonts.css";
+
+ion-footer{
+    text-align: center;
+    width: 100%;
+    font-size: xx-small;
+}
+
+.modal-body{
+    height: 85%;
+    overflow-y: scroll;
+}
+
+.cleanHeader{
+    position: absolute;
+    top: 4em;
+    padding: 2em;
+    //height: calc(100vh - 3em);
+}
+
+.fullHeight{
+    min-height: 100%;
+}
+
+.cleanHeaderContent{
+    padding-top: 1.5em;
+}
+
+.body-grid{
+    height: calc(100vh - 3em);
+    padding-bottom: 56px; // Limpiar la barra de estado.
+    min-height: 100vh; // Altura máxima para tapar la ventana por completo
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.hidden-input{
+    position: absolute;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.text-large{
+    font-size: 4rem !important;
+
+    @media only screen and (min-width: 1359px) {
+        font-size: 6rem !important;
+    }
+}
+
+@media print {
+    .no-print{
+        visibility: hidden !important;
+    }
+
+    .print{
+        visibility: visible !important;
+    }
+    .cleanHeader{
+        top: 0;
+    }
+}
