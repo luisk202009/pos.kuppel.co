@@ -1,0 +1,30 @@
+<ion-app>
+  <app-header *ngIf="router.url != '/login'" class="no-print"></app-header>
+
+  <ion-router-outlet></ion-router-outlet>
+  <!-- HIDE TABS
+    <ion-tabs>
+      <ion-tab-bar id="tabsBar" slot="bottom">
+        <ion-tab-button tab="home">
+          <ion-icon name="restaurant-outline"></ion-icon>
+          <ion-label>Mesas</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="home/clientes">
+          <ion-icon name="people-outline"></ion-icon>
+          <ion-label>Clientes</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="venta">
+          <ion-icon name="receipt-outline"></ion-icon>
+          <ion-label>Facturación</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button>
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <ion-label>Información</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  -->
+</ion-app>
